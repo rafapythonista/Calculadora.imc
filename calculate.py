@@ -72,14 +72,14 @@ class CalculadoraIMCApp:
 
         # Labels e campos para exibir o resultado
         self.campo_resultado = self.criar_entrada('Resultado: ', 'IMC', 5, disabled=True)
-        self.campo_categoria = self.criar_entrada('Categoria: ', 'Categoria', 6, disabled=True)
+        self.campo_categoria = self.criar_entrada('Categoria: ', 'Categoria', 6, disabled=True, width=160)
 
-    def criar_entrada(self, texto_label, texto_placeholder, linha, disabled=False):
+    def criar_entrada(self, texto_label, texto_placeholder, linha, disabled=False, width=150):
         """Função auxiliar para criar campos de entrada"""
         label = ctk.CTkLabel(self.root, text=texto_label, font=self.fonte_padrao)
         label.grid(row=linha, column=0, pady=5, sticky="w", padx=20)
 
-        entry = ctk.CTkEntry(self.root, placeholder_text=texto_placeholder, corner_radius=10)
+        entry = ctk.CTkEntry(self.root, placeholder_text=texto_placeholder, corner_radius=10, width=width)
         entry.grid(row=linha, column=1, pady=5, padx=20)
         if disabled:
             entry.configure(state="disabled")  # Deixa o campo desabilitado
